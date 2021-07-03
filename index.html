@@ -25,23 +25,23 @@
         <ul class="navbar-nav align-items-lg-center align-items-start ml-auto">
           <li class="d-flex align-items-center justify-content-between pl-4 pl-lg-0">
             <div class="navbar-collapse-logo">
-              <img src="images/logo.png" alt="" style="width:150px;height:50px;">
+              <img src="images/logo.png" alt="" style="width:150px;height:50px;" id="image_menu">
             </div>
-            <button class="navbar-toggler close-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler close-button" type="button" id="close_menu" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="mdi mdi-close navbar-toggler-icon pl-5"></span>
             </button>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#header-section">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="#header-section" id="home_menu" data-toggle="collapse" data-target="#navbarSupportedContent">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#features-section">Produk</a>
+            <a class="nav-link" href="#features-section" id="produk_menu">Produk</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#feedback-section">Testimoni</a>
+            <a class="nav-link" href="#feedback-section" id="testi_menu">Testimoni</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#contact-section">Lokasi</a>
+            <a class="nav-link" href="#contact-section" id="loc_menu">Lokasi</a>
           </li>
           <li class="nav-item btn-contact-us pl-4 pl-lg-0">
             <!-- <button class="btn btn-info" data-toggle="modal" data-target="#exampleModal">Contact Us</button> -->
@@ -395,5 +395,22 @@
   <script src="vendors/owl-carousel/js/owl.carousel.min.js"></script>
   <script src="vendors/aos/js/aos.js"></script>
   <script src="js/landingpage.js"></script>
+  <script>
+
+    document.getElementById("image_menu").addEventListener("click", closeToggle);
+    document.getElementById("home_menu").addEventListener("click", closeToggle);
+    document.getElementById("produk_menu").addEventListener("click", closeToggle);
+    document.getElementById("testi_menu").addEventListener("click", closeToggle);
+    document.getElementById("loc_menu").addEventListener("click", closeToggle);
+
+    function closeToggle() {
+      var toggle = document.getElementsByTagName("button")[0].getAttribute("aria-expanded")
+      
+      if(toggle == 'true'){
+        var link = document.getElementById('close_menu');
+        link.click();
+      }
+    }
+  </script>
 </body>
 </html>
